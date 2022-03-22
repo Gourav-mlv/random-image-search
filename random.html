@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Images</title>
+</head>
+<body>
+    <div>
+        <h1 style='center'></h1>
+    </div>
+    <div>
+        <label>Keywords : </label>
+        <input type="text" id="search-term" > 
+        </br>
+        </br>
+        <label>Size : </label>
+        <select name="size" id="size">
+            <option value="1600x900">1600x900</option>
+            <option value="1920x1080">1920x1080</option>
+            <option value="1200x720">1200x720</option>
+            <option value="600x480">600x480</option>
+        </select>
+        </br>
+        </br>
+        <button onclick="newImage()">Fetch</button>
+        </br>
+          </br>
+        <div>
+            <img id="newImg" >
+        </div>
+    </div>
+    
+    <script>
+        function newImage(){
+            var search = document.getElementById("search-term").value;
+            var size = document.getElementById("size").value;
+            var imgElement = document.getElementById('newImg');
+            imgElement.src ="https://source.unsplash.com/"+size+"/?"+search ;
+            console.log(imgElement.src);
+        }
+    </script>
+</body>
+</html>
